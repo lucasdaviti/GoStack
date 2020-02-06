@@ -45,4 +45,15 @@ server.delete('/projects/:id', (req, res) => {
   return res.status(200).json({ message: 'Project deleted succeed!' });
 });
 
+server.post('/projects/:id/tasks', (req, res) => {
+  const { id } = req.params;
+  const { title } = req.body;
+
+  const searchedProject = projectList.find(p => p.id == id);
+
+  searchedProject.tasks.push(title);
+
+  return res.json(searchedProject);
+});
+
 server.listen(3000);
