@@ -20,4 +20,8 @@ server.post('/projects', (req, res) => {
   return res.json(project);
 });
 
+server.get('/projects', (req, res) => {
+  return res.json(projectList);
+});
+
 server.listen(3000);
