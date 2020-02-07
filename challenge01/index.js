@@ -6,6 +6,13 @@ server.use(express.json());
 
 const projectList = [];
 
+server.use ((req, res, next) => {
+  
+  console.count("Requisitions count");
+
+  next();
+});
+
 function checkProjectExists(req, res, next) {
   const { id } = req.params;
   const projectExists = projectList.find(p => p.id == id);
