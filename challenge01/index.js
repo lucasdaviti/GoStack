@@ -8,7 +8,7 @@ const projectList = [];
 
 server.use ((req, res, next) => {
   
-  console.count("Requisitions count");
+  console.count("Request counter");
 
   next();
 });
